@@ -43,7 +43,9 @@ console.log ('')
 //Задание 4
 console.log ('Задание 4')
 
- var a = Math.floor(Math.random() * 16 )
+// var a = Math.floor(Math.random() * 16 )
+var a = +prompt ('Введите число от 0 до 15')
+
 
  switch (a) {
 
@@ -110,6 +112,10 @@ console.log ('Задание 4')
    case 15 :
    console.log ('15')
    break;
+
+   default:
+   console.log ('Неверно введено число')
+   break
  }
 
  console.log ('')
