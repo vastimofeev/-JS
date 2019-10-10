@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Камень, ножницы, бумага</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const ITEMS = ['КАМЕНЬ', 'Ножницы', 'Бумага']
+
+      var game = {
+        start: function(playerChoice, computerChoice) {
+          if (playerChoice !== 0 && playerChoice !== 1 && playerChoice !== 2) {
+            console.log ('Неверная команда')
+          }
+          else if ((playerChoice === 0 && computerChoice === 1) || (playerChoice === 1 && computerChoice === 2) || (playerChoice === 2 && computerChoice === 0)) {
+            console.log ('Вы выбрали: ' + ITEMS[playerChoice])
+            console.log ('Копьютер выбрал: ' + ITEMS[computerChoice])
+            console.log ('ВЫ ПОБЕДИЛИ')
+          } else if (playerChoice === computerChoice) {
+            console.log ('Вы выбрали: ' + ITEMS[playerChoice])
+            console.log ('Копьютер выбрал: ' + ITEMS[computerChoice])
+            console.log ('НИЧЬЯ')
+          } else {
+            console.log ('Вы выбрали: ' + ITEMS[playerChoice])
+            console.log ('Копьютер выбрал: ' + ITEMS[computerChoice])
+            console.log ('ВЫ ПРОИГРАЛИ!')
+          }
+        }
+      }
+
+      play()
+
+      function play () {
+        var a = +prompt ('Выберите: 1 - Камень, 2 - Ножницы, 3 - Бумага')
+        var b = Math.floor(Math.random()*3)
+        game.start(a-1, b)
+        return play()
+      }
+
+
+    </script>
+  </body>
+</html>
